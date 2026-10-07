@@ -1,6 +1,6 @@
 [project]
 name = "stern-brocot-tree"
-version = "0.1.0"
+version = "0.1.1"
 description = "Represents fractions via the Stern-Brocot sequence for ordered rational retrieval."
 requires-python = ">=3.10"
 dependencies = []
