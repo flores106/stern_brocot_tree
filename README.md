@@ -35,3 +35,10 @@ The trade-off: paths grow with the depth of the fraction in the tree, which is O
 ## Edge cases
 
 Only positive rationals in lowest terms are supported. Pass a `fractions.Fraction` (which auto-reduces); zero and negative values raise `ValueError`. The right neighbour of fractions on the right spine (like 2/1, 3/1, ...) is 1/0, represented as `Fraction(1, 0)`, which `fractions.Fraction` supports as a special infinity value.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
